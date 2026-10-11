@@ -1,0 +1,37 @@
+name: Build Atheer Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate Android platform scaffold if needed
+        run: flutter create --platforms=android --org com.atheer --project-name atheer_ai .
+      - name: Add Android permissions and SDK requirement
+        run: python3 scripts/ensure_android_permissions.py
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Analyze Dart code (informational)
+        run: flutter analyze || echo "Static analysis reported lints; build step will validate compilation."
+      - name: Build APK
+        run: flutter build apk --release
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: atheer-ai-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
