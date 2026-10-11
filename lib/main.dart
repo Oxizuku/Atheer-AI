@@ -698,7 +698,7 @@ class _CommandDrawer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(padding: const EdgeInsets.fromLTRB(16, 16, 12, 18), child: Row(children: [
-          const Icon(CupertinoIcons.circle_hexagongrid_fill, color: cyan, size: 23),
+          const Icon(CupertinoIcons.square_grid_2x2, color: cyan, size: 23),
           const SizedBox(width: 10),
           const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Text('ATHEER CONTROL', style: TextStyle(color: textBright, fontWeight: FontWeight.w700, letterSpacing: 1)), SizedBox(height: 4), Text('PERSONAL SYSTEM MENU', style: TextStyle(color: textMuted, fontSize: 8, letterSpacing: .8))])),
           IconButton(onPressed: onClose, icon: const Icon(CupertinoIcons.xmark, color: textMuted, size: 18)),
