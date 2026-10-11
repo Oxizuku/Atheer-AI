@@ -1,0 +1,14 @@
+atheer_ai_complete/
+  .github/workflows/build-apk.yml
+  backend/
+    .env.example
+    package.json
+    server.js
+  lib/
+    main.dart
+    services/app_config.dart
+    services/realtime_voice_service.dart
+    widgets/neural_orb.dart
+  scripts/ensure_android_permissions.py
+  pubspec.yaml
+  README.md
