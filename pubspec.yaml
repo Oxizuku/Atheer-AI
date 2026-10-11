@@ -1,15 +1,25 @@
 name: atheer_ai
-description: A professional task manager built with Flutter.
-publish_to: 'none'
+description: Atheer AI - Arabic Yemeni realtime personal assistant.
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.2.2
+  cupertino_icons: ^1.0.8
+  http: ^1.5.0
+  shared_preferences: ^2.5.3
+  flutter_secure_storage: ^9.2.4
+  url_launcher: ^6.3.2
+  flutter_webrtc: ^1.6.2+hotfix.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
