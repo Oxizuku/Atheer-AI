@@ -1,9 +1,10 @@
-*.iml
 .dart_tool/
-.idea/
 .packages
-.pub/
+.pub-cache/
 build/
-*.swp
 .flutter-plugins
 .flutter-plugins-dependencies
+.idea/
+.vscode/
+.env
+node_modules/
